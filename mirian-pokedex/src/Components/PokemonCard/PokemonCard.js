@@ -4,10 +4,16 @@ import pokebola from "../../Assets/pokebola.svg"
 import poison from "../../Assets/poison.svg"
 import grass from "../../Assets/grass.svg"
 import bullbassauro from "../../Assets/bulbassauro.svg"
+import { useNavigate } from 'react-router-dom'
 
 
 
 export default function PokemonCard() {
+    const navigate = useNavigate()
+    const goToDetalhePage = () => {
+        navigate("/detalhes")
+    }
+
     return (
         <Container>
             <PokemonImg src={bullbassauro} alt="Pokemon" />
@@ -20,7 +26,7 @@ export default function PokemonCard() {
                         <img src={grass} alt="" />
                         <img src={poison} alt="" />
                     </DivId>
-                    <BotaoDetalhe>
+                    <BotaoDetalhe onClick={goToDetalhePage}>
                         <p>Detalhes</p>
                     </BotaoDetalhe>
 

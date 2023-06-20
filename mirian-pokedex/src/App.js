@@ -1,10 +1,8 @@
 
 import './App.css';
+// import { GlobalState } from './Contexts/GlobalState';
 import GlobalStyle from './GlobalStyle';
 import { Router } from './Router/Router';
-
-
-
 
 function App() {
   return (
@@ -16,3 +14,4 @@ function App() {
 }
 
 export default App;
+

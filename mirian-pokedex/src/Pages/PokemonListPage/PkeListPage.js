@@ -1,26 +1,20 @@
 import React from 'react'
 import PokemonCard from '../../Components/PokemonCard/PokemonCard'
 import { TituloDaPagina, CardConteiner } from './PkeListStyle'
+import { useRecebeDados } from '../../Components/Hooks/useRecebeDados';
 
-export default function PkeListPage() {
+export default function PkeListPage(props) {
+    const pokemons = useRecebeDados();
+    console.log(pokemons);
     return (
         <>
             <TituloDaPagina>Todos Pokémons</TituloDaPagina>
             <CardConteiner>
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
-                <PokemonCard />
+                {pokemons.map((pokemon) => {
+                    return (<PokemonCard addPokemonNaPokedex={props.addPokemonNaPokedex} key={pokemon.name} pokemon={pokemon} />);
+
+                })}
+
 
             </CardConteiner>
 

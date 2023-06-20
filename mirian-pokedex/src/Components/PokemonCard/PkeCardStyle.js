@@ -34,6 +34,8 @@ font-size: 0.8vw;
 `
 export const NomePokemom = styled.p`
 font-size: 1.6vw;
+font-family: 'Inter'
+
 
 `
 export const TypePokemom = styled.img`

@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { CardBox, Container, InfoBox, DivId, BotaoCapturar, BotaoDetalhe, PokemonImg, IdPokemom, NomePokemom } from './PkeCardStyle'
+import { CardBox, Container, InfoBox, DivId, BotaoCapturar, BotaoDetalhe, BotaoRemover, PokemonImg, IdPokemom, NomePokemom } from './PkeCardStyle'
 import pokebola from "../../Assets/pokebola.svg"
 import poison from "../../Assets/poison.svg"
 import grass from "../../Assets/grass.svg"
 import bullbassauro from "../../Assets/bulbassauro.svg"
 import { useNavigate } from 'react-router-dom'
 import { SwitchTag } from '../SwitchTag/SwitchTag'
+import { useLocation } from "react-router-dom";
 
 
 
 export default function PokemonCard(props) {
+
+    const location = useLocation()
+
     const [pokemonData, setPokemonData] = useState({})
     const navigate = useNavigate()
     const goToDetalhePage = () => {
@@ -23,6 +27,10 @@ export default function PokemonCard(props) {
         setPokemonData(data)
 
     }
+
+
+
+
     console.log("pokemondata", pokemonData)
     useEffect(() => {
         getPokemon(props.pokemon.url)
@@ -40,8 +48,6 @@ export default function PokemonCard(props) {
                         <NomePokemom>{props.pokemon.name}</NomePokemom>
                         {pokemonData?.types?.map(item => (
 
-
-
                             <SwitchTag type={item.type.name} />
                         ))}
 
@@ -56,10 +62,13 @@ export default function PokemonCard(props) {
 
             </CardBox>
 
-            <BotaoCapturar onClick={() => props.addPokemonNaPokedex(props.pokemon)}>
+            {location.pathname === '/' ? (
+                <BotaoCapturar onClick={() =>
+                    props.addPokemonNaPokedex(props.pokemon)}>Capturar</BotaoCapturar>
+            ) : (
+                <BotaoRemover onClick={() =>
+                    props.removerPokedex(props.pokemon)}>Remover</BotaoRemover>)}
 
-                Capturar
-            </BotaoCapturar>
 
         </Container>
 

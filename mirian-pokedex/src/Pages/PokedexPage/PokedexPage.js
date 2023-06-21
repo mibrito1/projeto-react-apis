@@ -10,7 +10,7 @@ export default function PokedexPage(props) {
             {props.pokedex.map((pokemon) => {
                 return (<PokemonCard
                     addPokemonNaPokedex={props.addPokemonNaPokedex}
-                    key={pokemon.name} pokemon={pokemon} />)
+                    key={pokemon.name} pokemon={pokemon} removerPokedex={props.removerPokedex} />)
 
             })}
 

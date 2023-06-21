@@ -11,7 +11,8 @@ export default function PkeListPage(props) {
             <TituloDaPagina>Todos Pokémons</TituloDaPagina>
             <CardConteiner>
                 {pokemons.map((pokemon) => {
-                    return (<PokemonCard addPokemonNaPokedex={props.addPokemonNaPokedex} key={pokemon.name} pokemon={pokemon} />);
+                    return (<PokemonCard removerPokedex={props.removerPokedex} addPokemonNaPokedex={props.addPokemonNaPokedex} key={pokemon.name} pokemon={pokemon} />);
+
 
                 })}
 

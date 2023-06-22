@@ -1,10 +1,11 @@
 
 
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme, useDisclosure } from '@chakra-ui/react';
 import './App.css';
 // import { GlobalState } from './Contexts/GlobalState';
 import GlobalStyle from './GlobalStyle';
 import { Router } from './Router/Router';
+import { ModalPokedex } from './Components/SwitchTag/Modalpokedex';
 
 const theme = extendTheme({
   styles: {
@@ -17,10 +18,12 @@ const theme = extendTheme({
 });
 
 function App() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <ChakraProvider theme={theme}>
       <GlobalStyle />
-      <Router />
+      <Router onOpen={onOpen} />
+      <ModalPokedex isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
     </ChakraProvider>
   );
 }

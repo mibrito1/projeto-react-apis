@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { Box, Image, Progress, Text } from "@chakra-ui/react"
+import { Flex, Grid, Box, Image, Progress, Text, Heading } from "@chakra-ui/react"
 import pokebolaGrande from "../../Assets/imagens/pokeballBackGroundDetail.png"
 import pokebolaPequena from "../../Assets/imagens/pokeballDetailInsideBackground.svg"
 
@@ -96,7 +96,8 @@ export default function PkeDetailPage() {
                     top={"1.625rem"}
                     borderRadius={"0.5rem"}
                     border={"0.125rem solid white"}
-                ><Image src={pokemonData.sprites.front_default} /></Box>
+                ><Image src={pokemonData.sprites.front_default} />
+                </Box>
 
                 <Box
                     position={"absolute"}
@@ -117,15 +118,27 @@ export default function PkeDetailPage() {
                     left={"22.5rem"}
                     top={"1.5rem"}
                     borderRadius={"0.75rem"}
-                ><p>base stats</p>
+                ><Heading>base stats</Heading>
                     {
                         pokemonData.stats.map((stat) => {
                             return (
-                                <>
+                                <Grid
+                                    gap={10}
+                                    w={"100%"}
+                                    h={"30px"}
+                                    m={"10px"}
+                                    mt={"20px"} gridTemplateColumns={'2fr 20px 6fr'}>
+
                                     <p> {stat.stat.name} </p>
                                     <p> {stat.base_stat} </p>
-                                    <Progress value={stat.base_stat} />
-                                </>
+                                    <Box w={"50%"}>
+                                        <Progress
+                                            colorScheme={"orange"}
+                                            value={stat.base_stat}
+                                            size={"md"}
+                                        />
+                                    </Box>
+                                </Grid>
 
                             )
                         })
@@ -140,13 +153,20 @@ export default function PkeDetailPage() {
                     left={"48.188rem"}
                     top={"11.5rem"}
                     borderRadius={"0.5rem"}
-                ><p>moves</p>
-                    {pokemonData.moves.map((move) => {
-                        if (contaMovimentos < 6) {
-                            contaMovimentos++
-                            return (<Text> {move.move.name} </Text>)
-                        }
-                    })}
+                >
+                    <p>moves</p>
+                    <Flex
+                        direction={'column'}
+                        gap={"5px"}
+                        margin={"10px"}>
+                        {pokemonData.moves.map((move) => {
+                            if (contaMovimentos < 6) {
+                                contaMovimentos++
+                                return (
+                                    <Text> {move.move.name} </Text>)
+                            }
+                        })}
+                    </Flex>
                 </Box>
 
                 <Text

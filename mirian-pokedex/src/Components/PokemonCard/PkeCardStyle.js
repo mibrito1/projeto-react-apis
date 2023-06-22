@@ -14,10 +14,12 @@ position: relative;
 export const CardBox = styled.div`
 width: 30vw;
 height: 23vh;
-background-color: #729f92;
+background-color: ${(props) => props.cor};
 border-radius: 0.6vw;
 display: flex;
 justify-content: space-between;
+
+
 `;
 
 export const InfoBox = styled.div`

@@ -9,15 +9,20 @@ import { useState } from "react";
 
 export const Router = () => {
     const [pokedex, setPokedex] = useState([])
-    const addPokemonNaPokedex = (pokemon) => {
-        setPokedex([...pokedex, pokemon])
+    const addPokemonNaPokedex = (pokemonToAdd) => {
+
+        const jaNapokedex = pokedex.find((pokemonInPokedex) => pokemonInPokedex.name === pokemonToAdd.name)
+        if (!jaNapokedex) {
+            const newPokedex = [...pokedex, pokemonToAdd]
+            setPokedex(newPokedex)
+            alert("pokemon foi adivionado na Pokedex")
+        } else { alert("Pokemon ja esta na Pokedex") }
     }
 
-    // const filtrarPokedex = () => {
-    //     pokedexFiltrada = pokedex.filter()
-    //     setPokedex([...pokedex, pokemon])
-    // }
-
+    const removerPokedex = (pokemonToRemove) => {
+        const newPodex = pokedex.filter((pokemonInPokedex) => pokemonInPokedex.name !== pokemonToRemove.name)
+        setPokedex(newPodex)
+    }
     console.log("pokedex", pokedex);
 
     return (
@@ -25,9 +30,9 @@ export const Router = () => {
         <BrowserRouter>
             <Header />
             <Routes>
-                <Route index="/" element={<PkeListPage addPokemonNaPokedex={addPokemonNaPokedex} />} />
-                <Route path="/pokedex" element={<PokedexPage pokedex={pokedex} />} />
-                <Route path="/detalhes" element={<PkeDetailPage />} />
+                <Route index="/" element={<PkeListPage addPokemonNaPokedex={addPokemonNaPokedex} removerPokedex={removerPokedex} />} />
+                <Route path="/pokedex" element={<PokedexPage pokedex={pokedex} removerPokedex={removerPokedex} />} />
+                <Route path="/detalhes/:nome" element={<PkeDetailPage />} />
 
             </Routes>
 

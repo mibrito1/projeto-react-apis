@@ -8,7 +8,7 @@ display:flex ;
 justify-content: space-around;
 align-items: center;
 background-color: #ffffff;
-
+position: relative;
 `;
 export const BotaoPokedex = styled.button`
 width: 15vw;
@@ -46,6 +46,8 @@ gap: 0.3vw;
 img{
     height: 2vw;
 }
+position: absolute;
+left: 50px;
 
 `;
 

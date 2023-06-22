@@ -32,6 +32,8 @@ export const IdPokemom = styled.p`
 font-size: 0.8vw;
 
 `
+
+
 export const NomePokemom = styled.p`
 font-size: 1.6vw;
 font-family: 'Inter'
@@ -72,6 +74,18 @@ right: 2vw;
 width: 7.6vw;
 height: 4.2vh;
 background: #ffffff;
+border-radius: 0.4vw;
+border: none;
+`
+
+export const BotaoRemover = styled.button`
+position: absolute;
+bottom: 2vh;
+right: 2vw;
+
+width: 7.6vw;
+height: 4.2vh;
+background: red;
 border-radius: 0.4vw;
 border: none;
 `

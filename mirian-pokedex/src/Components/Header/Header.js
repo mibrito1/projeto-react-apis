@@ -16,19 +16,14 @@ export default function Header() {
         navigate("/")
     }
 
-
-
     return (
-
         <Container>
-
             <Logo src={logo} alt="logo do pokemon" />
 
             {location.pathname === '/' ? (<BotaoPokedex onClick={goToPokedex}>Pokedex</BotaoPokedex>) : (<BotaoHome onClick={goToTodosPokemons} >
                 <img src={MenorQue} alt='' />
                 <u>Todos os Pokemons</u>
             </BotaoHome>)}
-
         </Container>
     )
 }

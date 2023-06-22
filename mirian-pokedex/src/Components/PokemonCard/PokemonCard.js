@@ -17,8 +17,9 @@ export default function PokemonCard(props) {
     const [pokemonData, setPokemonData] = useState({})
     const navigate = useNavigate()
     const goToDetalhePage = () => {
-        navigate("/detalhes")
+        navigate(`/detalhes/${pokemonData.name}`)
     }
+
 
     // console.log(props)
     const getPokemon = async (link) => {
@@ -28,10 +29,8 @@ export default function PokemonCard(props) {
 
     }
 
-
-
-
     console.log("pokemondata", pokemonData)
+
     useEffect(() => {
         getPokemon(props.pokemon.url)
     }, [])
@@ -44,7 +43,8 @@ export default function PokemonCard(props) {
                 <InfoBox>
                     <DivId>
 
-                        <IdPokemom>#{pokemonData.id} </IdPokemom>
+                        <IdPokemom>#{pokemonData.id < 10 ? `0${pokemonData.id}` : pokemonData.id} </IdPokemom>
+
                         <NomePokemom>{props.pokemon.name}</NomePokemom>
                         {pokemonData?.types?.map(item => (
 

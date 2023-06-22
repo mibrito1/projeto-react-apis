@@ -23,8 +23,6 @@ export const Router = () => {
         const newPodex = pokedex.filter((pokemonInPokedex) => pokemonInPokedex.name !== pokemonToRemove.name)
         setPokedex(newPodex)
     }
-    git
-
     console.log("pokedex", pokedex);
 
     return (
@@ -34,7 +32,7 @@ export const Router = () => {
             <Routes>
                 <Route index="/" element={<PkeListPage addPokemonNaPokedex={addPokemonNaPokedex} removerPokedex={removerPokedex} />} />
                 <Route path="/pokedex" element={<PokedexPage pokedex={pokedex} removerPokedex={removerPokedex} />} />
-                <Route path="/detalhes" element={<PkeDetailPage />} />
+                <Route path="/detalhes/:nome" element={<PkeDetailPage />} />
 
             </Routes>
 

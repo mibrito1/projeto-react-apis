@@ -7,6 +7,7 @@ import bullbassauro from "../../Assets/bulbassauro.svg"
 import { useNavigate } from 'react-router-dom'
 import { SwitchTag } from '../SwitchTag/SwitchTag'
 import { useLocation } from "react-router-dom";
+import { switchCores } from '../SwitchTag/switchCores'
 
 
 
@@ -26,10 +27,10 @@ export default function PokemonCard(props) {
         const result = await fetch(link)
         const data = await result.json()
         setPokemonData(data)
-
     }
 
-    console.log("pokemondata", pokemonData)
+
+    // console.log("pokemondata", pokemonData)
 
     useEffect(() => {
         getPokemon(props.pokemon.url)
@@ -39,7 +40,7 @@ export default function PokemonCard(props) {
         <Container>
             <PokemonImg src={pokemonData?.sprites?.other["official-artwork"].front_default
             } alt="Pokemon" />
-            <CardBox>
+            <CardBox cor={switchCores(pokemonData.types && pokemonData.types[0].type.name)} >
                 <InfoBox>
                     <DivId>
 
@@ -49,6 +50,7 @@ export default function PokemonCard(props) {
                         {pokemonData?.types?.map(item => (
 
                             <SwitchTag type={item.type.name} />
+
                         ))}
 
                     </DivId>
@@ -77,4 +79,3 @@ export default function PokemonCard(props) {
     )
 }
 
-{/* <Tag> </Tag> é o mesmo que < Tag /> */ }

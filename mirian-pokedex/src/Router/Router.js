@@ -6,16 +6,19 @@ import PkeDetailPage from "../Pages/PokemonDetailPage/PkeDetailPage";
 import Header from "../Components/Header/Header";
 import { PokemonImg } from "../Components/PokemonCard/PkeCardStyle";
 import { useState } from "react";
+import { ModalPokedex } from "../Components/SwitchTag/Modalpokedex";
 
-export const Router = () => {
+export const Router = ({ onOpen }) => {
     const [pokedex, setPokedex] = useState([])
-    const addPokemonNaPokedex = (pokemonToAdd) => {
 
-        const jaNapokedex = pokedex.find((pokemonInPokedex) => pokemonInPokedex.name === pokemonToAdd.name)
+    const addPokemonNaPokedex = (pokemonToAdd) => {
+        const jaNapokedex = pokedex.find((pokemonInPokedex) => pokemonInPokedex.name === pokemonToAdd.name);
+
         if (!jaNapokedex) {
             const newPokedex = [...pokedex, pokemonToAdd]
             setPokedex(newPokedex)
-            alert("pokemon foi adivionado na Pokedex")
+            onOpen()
+
         } else { alert("Pokemon ja esta na Pokedex") }
     }
 
@@ -31,7 +34,9 @@ export const Router = () => {
             <Header />
             <Routes>
                 <Route index="/" element={<PkeListPage addPokemonNaPokedex={addPokemonNaPokedex} removerPokedex={removerPokedex} />} />
+
                 <Route path="/pokedex" element={<PokedexPage pokedex={pokedex} removerPokedex={removerPokedex} />} />
+
                 <Route path="/detalhes/:nome" element={<PkeDetailPage />} />
 
             </Routes>

@@ -20,6 +20,7 @@ import { Tag } from "./SwitchTagStyle"
 
 
 
+
 export const SwitchTag = (props) => {
     switch (props.type) {
         case "grass":

@@ -59,3 +59,13 @@ Os conteúdos principais  a serem estudados são:
 3.  Tire print das páginas do seu projeto e cole no readme;
 4.  Abra um novo Pull Request (PR) com a frase **PR para correção**. Caso não saiba como fazê-lo, assista a esse [vídeo](https://www.canva.com/design/DAFY4nS5W2c/t92uFMR61YtmA7bCwj2S1Q/watch).
 5.  Envie o link do seu PR e do surge no [formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
+
+
+ENTREGA:
+labenu-mirianb-pokemon.surge.sh
+![image](https://github.com/mibrito1/projeto-react-apis/assets/127511385/e6e04c0f-2b5d-4036-bf3e-a69cd37aaa22)
+![image](https://github.com/mibrito1/projeto-react-apis/assets/127511385/92694c8e-a071-4297-9f5c-41051cfe8fb3)
+![image](https://github.com/mibrito1/projeto-react-apis/assets/127511385/ba97b15c-5a05-430d-9ed2-b9637fd9498b)
+
+
+

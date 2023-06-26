@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 import { Flex, Grid, Box, Image, Progress, Text, Heading } from "@chakra-ui/react"
 import pokebolaGrande from "../../Assets/imagens/pokeballBackGroundDetail.png"
 import pokebolaPequena from "../../Assets/imagens/pokeballDetailInsideBackground.svg"
+import { SwitchTag } from '../../Components/SwitchTag/SwitchTag'
 
 
 export default function PkeDetailPage() {
@@ -33,6 +34,9 @@ export default function PkeDetailPage() {
     }
 
     return (
+
+
+
 
         <Box position={"relative"}>
             <Text
@@ -65,7 +69,7 @@ export default function PkeDetailPage() {
                 left={"50%"}
                 top={"11.75rem"}
                 transform={"translate(-50%)"}
-                bgColor={"#BF9762"}
+                bgColor={"#5ec8b7"}
                 borderRadius={"2.368rem"}
             >
                 <Image
@@ -96,7 +100,12 @@ export default function PkeDetailPage() {
                     top={"1.625rem"}
                     borderRadius={"0.5rem"}
                     border={"0.125rem solid white"}
-                ><Image src={pokemonData.sprites.front_default} />
+                >
+                    <Image
+                        src={pokemonData.sprites.front_default}
+                        boxSize="250px"
+                        objectFit="cover"
+                    />
                 </Box>
 
                 <Box
@@ -108,7 +117,13 @@ export default function PkeDetailPage() {
                     top={"22.188rem"}
                     borderRadius={"0.5rem"}
                     border={"0.125rem solid white"}
-                ><Image src={pokemonData.sprites.back_default} /></Box>
+                >
+                    <Image
+                        src={pokemonData.sprites.back_default}
+                        boxSize="250px"
+                        objectFit="cover"
+                    />
+                </Box>
 
                 <Box
                     position={"absolute"}
@@ -118,31 +133,34 @@ export default function PkeDetailPage() {
                     left={"22.5rem"}
                     top={"1.5rem"}
                     borderRadius={"0.75rem"}
-                ><Heading>base stats</Heading>
-                    {
-                        pokemonData.stats.map((stat) => {
+                >
+                    <Heading>base stats</Heading>
+                    <Flex
+                        direction={"column"}
+                        justify={"center"}
+                        align={"center"}
+                        w={"95%"}
+                        m={"10px"}
+                    >
+                        {pokemonData.stats.map((stat) => {
                             return (
                                 <Grid
                                     gap={10}
+                                    m={"10px"}
+                                    mt={"20px"}
                                     w={"100%"}
                                     h={"30px"}
-                                    m={"10px"}
-                                    mt={"20px"} gridTemplateColumns={'2fr 20px 6fr'}>
-
-                                    <p> {stat.stat.name} </p>
-                                    <p> {stat.base_stat} </p>
-                                    <Box w={"50%"}>
-                                        <Progress
-                                            colorScheme={"orange"}
-                                            value={stat.base_stat}
-                                            size={"md"}
-                                        />
+                                    gridTemplateColumns={"2fr 20px 7fr"}
+                                >
+                                    <Text fontSize={"3rm"}> {stat.stat.name} </Text>
+                                    <Text> {stat.base_stat} </Text>
+                                    <Box w={"80%"}>
+                                        <Progress colorScheme={"orange"} value={stat.base_stat} />
                                     </Box>
                                 </Grid>
-
-                            )
-                        })
-                    }
+                            );
+                        })}
+                    </Flex>
                 </Box>
 
                 <Box
@@ -155,15 +173,22 @@ export default function PkeDetailPage() {
                     borderRadius={"0.5rem"}
                 >
                     <p>moves</p>
-                    <Flex
-                        direction={'column'}
-                        gap={"5px"}
-                        margin={"10px"}>
+                    <Flex direction={"column"} gap={"5px"} margin={"10px"}>
                         {pokemonData.moves.map((move) => {
                             if (contaMovimentos < 6) {
-                                contaMovimentos++
+                                contaMovimentos++;
                                 return (
-                                    <Text> {move.move.name} </Text>)
+                                    <Box
+                                        h={"35px"}
+                                        bg={"#ECECEC"}
+                                        borderRadius={"10px"}
+                                        border={"1px dashed "}
+                                        borderWidth={"1px"}
+                                    >
+                                        {" "}
+                                        <Text ml={"10px"}> {move.move.name} </Text>
+                                    </Box>
+                                );
                             }
                         })}
                     </Flex>
@@ -190,8 +215,18 @@ export default function PkeDetailPage() {
                 >
                     {pokemonData.name}
                 </Text>
+                <Flex position={"absolute"} top={"6.625rem"} left={"48.375rem"}>
+                    {pokemonData.types.map((item) => (
+                        <SwitchTag
+                            type={item.type.name}
+                            position={"absolute"}
+                            top={"40.625rem"}
+                            left={"48.375rem"}
+                        />
+                    ))}
+                </Flex>
 
-                <Image
+                {/* <Image
                     position={"absolute"}
                     w={"5.688rem"}
                     h={"1.938rem"}
@@ -211,7 +246,7 @@ export default function PkeDetailPage() {
                     gap={"1.063rem"}
                     src={""}
                     alt=""
-                />
+                /> */}
             </Box>
         </Box>
     )

@@ -67,13 +67,13 @@ https://labenu-mirianb-pokemon.surge.sh/
 
 ### Telas
 
-<div  margin-top="10px">
+<div >
 <img src="https://github.com/mibrito1/projeto-react-apis/assets/127511385/e6e04c0f-2b5d-4036-bf3e-a69cd37aaa22" width="500px"/>
 </div>
-<div margin-top="10px">
+<div >
 <img src="https://github.com/mibrito1/projeto-react-apis/assets/127511385/92694c8e-a071-4297-9f5c-41051cfe8fb3" width="500px"/>
 </div>
-<div margin-top="10px">
+<div >
 <img src="https://github.com/mibrito1/projeto-react-apis/assets/127511385/d5ba4e41-1887-4da8-8d75-88c1ee1c7675" width="500px"/>	
 </div>
 

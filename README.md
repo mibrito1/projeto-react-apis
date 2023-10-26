@@ -45,7 +45,7 @@ Os conteúdos principais  a serem estudados são:
 - Faça o fork desse repositório e realize o clone da sua cópia `seu-nome-de-usuario/projeto-lista-intro-javascript`.
    <details>
    <summary>Quer uma dica?</summary>
-   <img src="https://firebasestorage.googleapis.com/v0/b/assets-conteudo.appspot.com/o/gerais%2Ffork.png?alt=media&token=7030e997-246a-41fe-a75f-2a2ced61e54d" alt="Como adicionar o projeto no repositório"/>
+   <img src="https://firebasestorage.googleapis.com/v0/b/assets-conteudo.appspot.com/o/gerais%2Ffork.png?alt=media&token=7030e997-246a-41fe-a75f-2a2ced61e54d" alt="Como adicionar o projeto no repositório" />
    </details>
 - Crie os arquivos do projeto dentro deste repo;
 - **Lembre-se de abrir os PRs para seu próprio repositório.**
@@ -53,7 +53,8 @@ Os conteúdos principais  a serem estudados são:
 
 ### Instruções de entrega
 
-![image](https://user-images.githubusercontent.com/71137294/227538428-52271ed2-df78-4500-b286-25f03aa7bf2e.png)
+<img src="https://user-images.githubusercontent.com/71137294/227538428-52271ed2-df78-4500-b286-25f03aa7bf2e.png" width="500px"/>
+
 1.  [Crie o surge](https://labenu.notion.site/Deploy-de-front-React-com-Surge-f902a03ec1d247dc9af9aee5a1469d96) do seu projeto e pegue o link da publicação(deploy);
 2.  Adicione o link do surge no readme do seu projeto;
 3.  Tire print das páginas do seu projeto e cole no readme;
@@ -61,11 +62,21 @@ Os conteúdos principais  a serem estudados são:
 5.  Envie o link do seu PR e do surge no [formulário de entrega](https://docs.google.com/forms/d/e/1FAIpQLSfGGRaglpzWpdREBBfq3eUCMXkRXuiS61Zfyy0L_Ce0uNIXTA/viewform).
 
 
-ENTREGA:
-labenu-mirianb-pokemon.surge.sh
-![image](https://github.com/mibrito1/projeto-react-apis/assets/127511385/e6e04c0f-2b5d-4036-bf3e-a69cd37aaa22)
-![image](https://github.com/mibrito1/projeto-react-apis/assets/127511385/92694c8e-a071-4297-9f5c-41051cfe8fb3)
-![image](https://github.com/mibrito1/projeto-react-apis/assets/127511385/ba97b15c-5a05-430d-9ed2-b9637fd9498b)
+### Link do projeto finalizado ⬇️
+https://labenu-mirianb-pokemon.surge.sh/
+
+### Telas
+
+<div display="flex"  direction="column"  >
+<img src="https://github.com/mibrito1/projeto-react-apis/assets/127511385/e6e04c0f-2b5d-4036-bf3e-a69cd37aaa22" width="500px"/>
+<img src="https://github.com/mibrito1/projeto-react-apis/assets/127511385/92694c8e-a071-4297-9f5c-41051cfe8fb3" width="500px"/>
+<img src="https://github.com/mibrito1/projeto-react-apis/assets/127511385/ba97b15c-5a05-430d-9ed2-b9637fd9498b" width="500px"/>	
+</div>
+
+	
+
+
+
 
 
 
